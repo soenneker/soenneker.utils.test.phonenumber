@@ -1,6 +1,6 @@
-﻿using Bogus;
-using PhoneNumbers;
+﻿using PhoneNumbers;
 using System;
+using Soenneker.Utils.Random;
 
 namespace Soenneker.Utils.Test.PhoneNumber;
 
@@ -9,7 +9,6 @@ namespace Soenneker.Utils.Test.PhoneNumber;
 /// </summary>
 public static class TestPhoneNumberUtil
 {
-    private static readonly Faker _faker = new();
     private static readonly PhoneNumberUtil _phoneUtil = PhoneNumberUtil.GetInstance();
 
     /// <summary>
@@ -23,7 +22,7 @@ public static class TestPhoneNumberUtil
 
         for (var i = 0; i < maxAttempts; i++)
         {
-            string phoneNumber = _faker.Phone.PhoneNumber("##########");
+            string phoneNumber = GenerateRandom10DigitNumber();
 
             try
             {
@@ -34,10 +33,20 @@ public static class TestPhoneNumberUtil
             }
             catch (NumberParseException)
             {
-                // Continue to next attempt
+                // Ignore and try again
             }
         }
 
         throw new InvalidOperationException($"Failed to generate a valid phone number after {maxAttempts} attempts.");
+    }
+
+    private static string GenerateRandom10DigitNumber()
+    {
+        // Generate a 10-digit number (not starting with 0)
+        int areaCode = RandomUtil.Next(100, 1000);  // 3 digits, can't start with 0
+        int prefix = RandomUtil.Next(100, 1000);    // 3 digits
+        int lineNumber = RandomUtil.Next(1000, 10000); // 4 digits
+
+        return $"{areaCode}{prefix}{lineNumber}";
     }
 }

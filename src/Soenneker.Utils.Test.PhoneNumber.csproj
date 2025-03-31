@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>Generates a random valid 10-digit phone number using Bogus</Description>
+        <Description>Generates a random valid 10-digit phone number</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">3.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Utils.Test.PhoneNumber</AssemblyName>
         <PackageId>Soenneker.Utils.Test.PhoneNumber</PackageId>
-        <PackageTags>utils test phonenumber phone number valid validator bogus faker testphonenumberutil util csharp dotnet c# .net</PackageTags>
+        <PackageTags>utils test phonenumber phone number valid validator testphonenumberutil util csharp dotnet c# .net</PackageTags>
         <Copyright>Copyright © 2025 Jake Soenneker</Copyright>
         <Authors>Jake Soenneker</Authors>
         <Company>https://soenneker.com</Company>
@@ -42,8 +42,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="35.6.2" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
         <PackageReference Include="Soenneker.Utils.Libphonenumber" Version="3.0.2" />
+        <PackageReference Include="Soenneker.Utils.Random" Version="3.0.77" />
     </ItemGroup>
 </Project>
