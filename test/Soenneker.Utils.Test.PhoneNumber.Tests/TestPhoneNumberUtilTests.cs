@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿using AwesomeAssertions;
 using PhoneNumbers;
 using Soenneker.Tests.FixturedUnit;
 using System;
