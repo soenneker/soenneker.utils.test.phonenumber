@@ -1,25 +1,24 @@
-﻿using AwesomeAssertions;
+using AwesomeAssertions;
 using PhoneNumbers;
-using Soenneker.Tests.FixturedUnit;
+using Soenneker.Tests.HostedUnit;
 using System;
-using Xunit;
 
 namespace Soenneker.Utils.Test.PhoneNumber.Tests;
 
-[Collection("Collection")]
-public class TestPhoneNumberUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class TestPhoneNumberUtilTests : HostedUnitTest
 {
-    public TestPhoneNumberUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public TestPhoneNumberUtilTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
     }
 
-    [Fact]
+    [Test]
     public void Should_return_valid_phone_number_for_US()
     {
         // Act
@@ -51,7 +50,7 @@ public class TestPhoneNumberUtilTests : FixturedUnitTest
         phoneNumber.Should().MatchRegex(@"^\d{10}$");
     }
 
-    [Fact]
+    [Test]
     public void Should_throw_if_invalid_region()
     {
         // Act
