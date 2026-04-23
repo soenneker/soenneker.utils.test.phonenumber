@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Utils.Libphonenumber" Version="4.0.167" />
+        <PackageReference Include="Soenneker.Utils.Libphonenumber" Version="4.0.168" />
         <PackageReference Include="Soenneker.Utils.Random" Version="4.0.118" />
     </ItemGroup>
 </Project>
