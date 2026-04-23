@@ -33,10 +33,10 @@ public class TestPhoneNumberUtilTests : HostedUnitTest
         phoneNumber.Should().MatchRegex(@"^\d{10}$");
     }
 
-    [Theory]
-    [InlineData("US")]
-    [InlineData("CA")]
-    [InlineData("GB")]
+    [Test]
+    [Arguments("US")]
+    [Arguments("CA")]
+    [Arguments("GB")]
     public void Should_return_valid_phone_number_for_region(string region)
     {
         // Act
@@ -60,3 +60,4 @@ public class TestPhoneNumberUtilTests : HostedUnitTest
         act.Should().Throw<InvalidOperationException>();
     }
 }
+
