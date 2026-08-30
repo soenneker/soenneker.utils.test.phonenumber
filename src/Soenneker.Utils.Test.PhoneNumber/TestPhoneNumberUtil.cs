@@ -12,10 +12,11 @@ public static class TestPhoneNumberUtil
     private static readonly PhoneNumberUtil _phoneUtil = PhoneNumberUtil.GetInstance();
 
     /// <summary>
-    /// Generates a random, valid 10-digit phone number for the specified region.
+    /// Generates random 10-digit candidates until libphonenumber considers one structurally valid for the specified region.
     /// </summary>
     /// <param name="defaultRegion">The region code to validate the phone number against (e.g., "US"). Defaults to "US".</param>
-    /// <returns>A valid phone number string formatted as a 10-digit number.</returns>
+    /// <returns>A 10-digit national-number string that matches libphonenumber metadata for the region.</returns>
+    /// <exception cref="InvalidOperationException">Thrown when no valid candidate is found within 100 attempts.</exception>
     public static string GetRandomValidPhoneNumber(string defaultRegion = "US")
     {
         const int maxAttempts = 100;
