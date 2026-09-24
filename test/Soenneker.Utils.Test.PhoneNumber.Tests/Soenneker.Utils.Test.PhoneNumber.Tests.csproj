@@ -25,5 +25,10 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Soenneker.Utils.Test.PhoneNumber\Soenneker.Utils.Test.PhoneNumber.csproj" />
     </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
+        <PackageReference Include="libphonenumber-csharp" Version="9.0.39" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.12" />
+    </ItemGroup>
 </Project>
 

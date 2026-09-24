@@ -44,7 +44,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Utils.Libphonenumber" Version="4.0.242" />
         <PackageReference Include="Soenneker.Utils.Random" Version="4.0.134" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="libphonenumber-csharp" Version="9.0.39" />
     </ItemGroup>
 </Project>
