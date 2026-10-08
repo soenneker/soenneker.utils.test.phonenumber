@@ -48,6 +48,6 @@
         <PackageReference Include="Soenneker.Utils.Random" Version="4.0.135" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="libphonenumber-csharp" Version="9.0.40" />
+        <PackageReference Include="libphonenumber-csharp" Version="9.0.41" />
     </ItemGroup>
 </Project>
